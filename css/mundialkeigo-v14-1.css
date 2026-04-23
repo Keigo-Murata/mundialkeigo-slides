@@ -840,3 +840,6 @@ body.page__mundial-keigo-he-youkoso .notion-page-content hr {
   /* v14.1: モバイルの H2 は上余白を少し詰める */
   body.page--root .notion-page-content .notion-h2,
   body.page__mundial-keigo-he-youkoso .notion-page-content .notion-h2 {
+    margin-top: 2rem !important;
+  }
+}
