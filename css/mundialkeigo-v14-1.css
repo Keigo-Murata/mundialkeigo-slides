@@ -786,10 +786,12 @@ body.page__mundial-keigo-he-youkoso .notion-page-content > .notion-page[href$="f
   display: none !important;
 }
 
-/* v14.1: H2 見出し（🎯 このサイトの使い方 / 📚 人気シリーズ / 👋 Keigo について / 🎓 Preply / 🌐 Follow）
-   左アクセントバー + 余白強化でセクション区切りを明確に。 */
-body.page--root .notion-page-content h2,
-body.page__mundial-keigo-he-youkoso .notion-page-content h2 {
+/* v14.1e: H2 見出し（🎯 このサイトの使い方 / 📚 人気シリーズ / 👋 Keigo について / 🎓 Preply / 🌐 Follow）
+   左アクセントバー + 余白強化でセクション区切りを明確に。
+   注意: Super.so v3 の root landing は .notion-page-content ではなく .notion-root を使う。
+   body.page--root スコープで直接 h2 を target する。 */
+body.page--root h2,
+body.page__mundial-keigo-he-youkoso h2 {
   border-left: 4px solid var(--color-accent) !important;
   padding-left: 14px !important;
   margin-top: 3rem !important;
@@ -797,27 +799,27 @@ body.page__mundial-keigo-he-youkoso .notion-page-content h2 {
   line-height: 1.35 !important;
 }
 
-/* v14.1: 「🎯 このサイトの使い方」の bullet list を読みやすく */
-body.page--root .notion-page-content .notion-bulleted-list,
-body.page__mundial-keigo-he-youkoso .notion-page-content .notion-bulleted-list {
+/* v14.1e: 「🎯 このサイトの使い方」の bullet list を読みやすく */
+body.page--root .notion-bulleted-list,
+body.page__mundial-keigo-he-youkoso .notion-bulleted-list {
   padding-left: 1.25rem !important;
   line-height: 1.9 !important;
   margin: 1rem 0 !important;
 }
-body.page--root .notion-page-content .notion-bulleted-list > li,
-body.page__mundial-keigo-he-youkoso .notion-page-content .notion-bulleted-list > li {
+body.page--root .notion-bulleted-list > li,
+body.page__mundial-keigo-he-youkoso .notion-bulleted-list > li {
   padding: 4px 0 !important;
 }
 
-/* v14.1: Hero callout と 1 つ目の column 群の間の余白を控えめに揃える */
-body.page--root .notion-page-content > .notion-callout:first-of-type + .notion-column-list,
-body.page__mundial-keigo-he-youkoso .notion-page-content > .notion-callout:first-of-type + .notion-column-list {
+/* v14.1e: Hero callout と 1 つ目の column 群の間の余白を控えめに揃える */
+body.page--root .notion-callout:first-of-type + .notion-column-list,
+body.page__mundial-keigo-he-youkoso .notion-callout:first-of-type + .notion-column-list {
   margin-top: .5rem !important;
 }
 
-/* v14.1: 記事/導線カード間の水平ルールをやわらかく */
-body.page--root .notion-page-content hr,
-body.page__mundial-keigo-he-youkoso .notion-page-content hr {
+/* v14.1e: 記事/導線カード間の水平ルールをやわらかく */
+body.page--root hr,
+body.page__mundial-keigo-he-youkoso hr {
   border: 0 !important;
   border-top: 1px solid var(--color-border) !important;
   margin: 2.5rem 0 !important;
@@ -842,9 +844,7 @@ body.page__mundial-keigo-he-youkoso .notion-page-content hr {
     text-align: center;
     padding: 12px 20px;
   }
-  /* v14.1: モバイルの H2 は上余白を少し詰める */
-  body.page--root .notion-page-content .notion-h2,
-  body.page__mundial-keigo-he-youkoso .notion-page-content .notion-h2 {
+  /* v14.1e: モバイルの H2 は上余白を少し詰める */
+  body.page--root h2,
+  body.page__mundial-keigo-he-youkoso h2 {
     margin-top: 2rem !important;
-  }
-}
