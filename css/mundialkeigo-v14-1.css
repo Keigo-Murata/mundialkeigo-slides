@@ -648,16 +648,24 @@ body.page__mundial-keigo-he-youkoso .notion-page-content > .notion-callout:first
   line-height: 1.6;
 }
 
-/* v14.1: 3-column grid の高さ揃え (言語カード / Featured series / Social row)
-   flex + align-items:stretch だと viewport 狭めで flex-wrap により 2+1 配置に崩れた。
-   CSS Grid + auto-fit(minmax) で「最小 220px、入るだけ等幅、横並び強制」に変更。
-   子が 2 つなら 2 カラム、3 つなら 3 カラム、超狭いと自動で縦積み。 */
+/* v14.1c: 3-column grid の高さ揃え (言語カード / Featured series / Social row)
+   flex + align-items:stretch は viewport 狭めで flex-wrap により 2+1 配置に崩れた。
+   CSS Grid + auto-fit(minmax) に変更して横並び強制 + 等高化。
+   注意: Super.so は .notion-column に inline style="width: calc(...)" を書き込む。
+   grid 文脈では calc の変数が未定義で 0 になり列が潰れるため、width を明示的に上書き。 */
 body.page--root .notion-column-list,
 body.page__mundial-keigo-he-youkoso .notion-column-list {
   display: grid !important;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)) !important;
   align-items: stretch !important;
   gap: 18px !important;
+}
+/* Super.so inline width を上書き — grid cell の幅に fill させる */
+body.page--root .notion-column-list > .notion-column,
+body.page__mundial-keigo-he-youkoso .notion-column-list > .notion-column {
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
 }
 
 /* 3-column tile: 言語カード / Featured series / Social row */
