@@ -788,8 +788,8 @@ body.page__mundial-keigo-he-youkoso .notion-page-content > .notion-page[href$="f
 
 /* v14.1: H2 見出し（🎯 このサイトの使い方 / 📚 人気シリーズ / 👋 Keigo について / 🎓 Preply / 🌐 Follow）
    左アクセントバー + 余白強化でセクション区切りを明確に。 */
-body.page--root .notion-page-content .notion-h2,
-body.page__mundial-keigo-he-youkoso .notion-page-content .notion-h2 {
+body.page--root .notion-page-content h2,
+body.page__mundial-keigo-he-youkoso .notion-page-content h2 {
   border-left: 4px solid var(--color-accent) !important;
   padding-left: 14px !important;
   margin-top: 3rem !important;
