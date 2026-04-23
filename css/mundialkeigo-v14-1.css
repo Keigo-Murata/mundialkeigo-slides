@@ -660,12 +660,17 @@ body.page__mundial-keigo-he-youkoso .notion-column-list {
   align-items: stretch !important;
   gap: 18px !important;
 }
-/* Super.so inline width を上書き — grid cell の幅に fill させる */
+/* Super.so inline width + margin-inline-start を上書き — grid cell 全幅に fill させる
+   Super.so は 2 番目以降の column に margin-inline-start: var(--column-spacing) (46px)
+   を付けるが、これが grid track 224px から 46px 食って 178px になる症状を解消。 */
 body.page--root .notion-column-list > .notion-column,
 body.page__mundial-keigo-he-youkoso .notion-column-list > .notion-column {
   width: auto !important;
   min-width: 0 !important;
   max-width: none !important;
+  margin-inline-start: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 /* 3-column tile: 言語カード / Featured series / Social row */
@@ -842,4 +847,3 @@ body.page__mundial-keigo-he-youkoso .notion-page-content hr {
   body.page__mundial-keigo-he-youkoso .notion-page-content .notion-h2 {
     margin-top: 2rem !important;
   }
-}
